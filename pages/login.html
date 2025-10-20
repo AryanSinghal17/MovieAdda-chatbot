@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieAdda - Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <img src="../logo.png" alt="website logo"></div>
+        <nav>
+            <ul>        
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-bg">
+            <div class="login-wrap">
+                <h1>Login to MovieAdda</h1>
+                <p class="subtitle">Access your account to enjoy personalized movie recommendations!</p>
+
+                <form id="loginForm">
+                    <input type="email" id="email" name="email" placeholder="Email" class="txt" required>
+                    <input type="password" id="password" name="password" placeholder="Password" class="txt" required>
+                    <button type="submit" class="wrap-button">Login</button>
+                    <p class="signup-text">Don't have an account? <a href="signup.html">Sign up</a></p>
+                </form>
+
+                <div id="login-msg" class="thankyou">Login successful ✅</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div><p>&#169; 2025 MovieAdda. All rights reserved.</p></div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const loginMsg = document.getElementById("login-msg");
+
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            loginMsg.classList.add("show");
+            loginForm.reset();
+            setTimeout(() => {
+                loginMsg.classList.remove("show");
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

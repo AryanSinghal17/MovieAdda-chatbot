@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieAdda - Feedback</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+    <header>
+        <div><img src="../logo.png" alt="website logo"></div>
+        <nav>
+            <ul>        
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="feedbk">
+            <div class="wrap">
+                <h1>🎥 We Value Your Feedback!</h1>
+                <p class="subtitle">Tell us what you loved and what we can improve — your voice shapes MovieAdda!</p>
+
+                <form id="feedbackForm">
+                    <table class="wrap-table">
+                        <tr>
+                            <td><label for="name">Your Name:</label></td>
+                            <td><input type="text" id="name" name="name" class="txt" placeholder="Enter your name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" class="txt" placeholder="example@email.com"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="rating">Your Experience:</label></td>
+                            <td>
+                                <div class="rating">
+                                    <input type="radio" id="star5" name="rate" value="5"><label for="star5">★</label>
+                                    <input type="radio" id="star4" name="rate" value="4"><label for="star4">★</label>
+                                    <input type="radio" id="star3" name="rate" value="3"><label for="star3">★</label>
+                                    <input type="radio" id="star2" name="rate" value="2"><label for="star2">★</label>
+                                    <input type="radio" id="star1" name="rate" value="1"><label for="star1">★</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label for="message">Your Message:</label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <textarea id="message" name="message" class="txt-area" placeholder="Share your thoughts..." required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center;">
+                                <button type="submit" class="wrap-button">Send Feedback</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div id="thankyou" class="thankyou">Thank you for your feedback ❤️</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div><p>&#169; 2025 MovieAdda. All rights reserved.</p></div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        const form = document.getElementById("feedbackForm");
+        const thankyou = document.getElementById("thankyou");
+        
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            thankyou.classList.add("show");
+            form.reset();
+            setTimeout(() => {
+                thankyou.classList.remove("show");
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
