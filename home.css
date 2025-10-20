@@ -1,0 +1,347 @@
+.hero{
+    display: flex;flex-wrap: wrap; justify-content: center; margin: 0px; overflow: auto; padding-top: 20px;
+}
+
+.yt{
+    margin: 0px; flex-grow: 2; padding-left: 10px;
+}
+
+.lazy{
+    width: 100%;
+}
+
+.hero > img{
+    height: 314px;padding-left: 10px; padding-left: 10px;
+}
+
+.pstr{
+    display: flex; overflow: auto; 
+    
+}
+
+.pstr > a >img{
+    width: 200px; padding-left: 10px; padding-bottom: 20px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media only screen and (max-width:600px) {
+
+    .hero > img{
+        display:none;
+    }
+    
+}
+
+/* --- General & Typography --- */
+body {
+    /* Use the Poppins font and a clear fallback */
+    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Remove default body margin */
+    padding: 0;
+    background-color: #121212; /* Dark background for a 'movie' feel */
+    color: #E0E0E0; /* Light text for contrast */
+}
+
+h2 {
+    color:#f97316; /* A vibrant, cinematic yellow/gold for headings */
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-weight: 700; /* Make headings bold */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: #90CAF9; /* A light blue for links */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f97316; /* Highlight links on hover */
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: #000000; /* Slightly darker than body */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+header img {
+    /* Assuming logo is small, you might need to adjust size */
+    height: 50px; 
+    object-fit: contain;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #E0E0E0;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    color: #1F1F1F;
+    background-color: #f97316; /* Invert colors on hover */
+}
+
+/* --- Main Content & Hero Section --- */
+main {
+    padding: 0 20px;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between flex items */
+    margin: 0;
+    padding-top: 20px;
+}
+
+.yt {
+    height: 350px;
+    flex-grow: 1; /* Allows it to take available space */
+    max-width: 800px; /* Set a max width for the video container */
+    min-width: 300px;
+    box-shadow: 0 0 15px rgba(255, 195, 0, 0.4); /* Glow effect for the featured video */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures iframe respects border-radius */
+}
+
+.lazy {
+    width: 100%;
+    /* Maintain 16:9 aspect ratio */
+    aspect-ratio: 16 / 9; 
+    height: auto; 
+    min-height: 315px; /* Keeps the minimum height from your original code */
+}
+
+.hero > .ads {
+    height: 350px; /* Match height of video for visual balance */
+    width: auto; /* Let the width adjust */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Poster Gallery Sections --- */
+.pstr {
+    display: flex;
+    overflow-x: auto; /* Keep the horizontal scroll, but enhance the look */
+    padding: 10px 0;
+    /* Hide scrollbar on supported browsers for a cleaner look */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar on Chrome, Safari and Opera */
+.pstr::-webkit-scrollbar {
+    display: none;
+}
+
+.pstr > a {
+    flex-shrink: 0; /* Prevents posters from shrinking */
+    padding: 0 10px 20px 0;
+}
+
+.pstr > a > img {
+    width: 220px; /* Slightly larger width for better viewing */
+    height: 330px; /* Maintain aspect ratio close to 2:3 */
+    object-fit: cover;
+    padding-left: 0; /* Remove redundant padding */
+    border-radius: 8px; /* Softened corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow for pop-out effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; /* Prepare for border hover effect */
+}
+
+.pstr > a > img:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 20px  #f97316; /* Intense glow on hover */
+    border-color:  #f97316; /* Yellow border on hover */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    color: #90A4AE;
+}
+
+footer nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+footer nav li {
+    margin: 0 15px;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media only screen and (max-width: 900px) {
+    /* Adjustments for tablets/smaller desktops */
+    .yt {
+        max-width: 100%;
+    }
+    header {
+        flex-direction: column;
+    }
+    header nav ul {
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Mobile-specific changes */
+    .hero > .ads {
+        display: none; /* Hide ads on very small screens */
+    }
+    
+    .pstr > a > img {
+        width: 150px; /* Smaller posters for better fit on mobile */
+        height: 225px; 
+    }
+    
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav li {
+        margin: 5px 10px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+    footer nav ul {
+        margin-top: 10px;
+    }
+}
+
+
+/* --- Other Page Styles (Refinement) --- */
+
+/* feedback */
+.feedbk {
+    min-height: 700px;
+    /* Use a better path/image or remove the background image for now 
+       If you keep it, make sure the text is readable */
+    background-image: none; /* Removing potentially broken or illegible background */
+    background-color: #1F1F1F; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap {
+    padding: 30px;
+    width: 90%; 
+    max-width: 700px;
+    background-color: #2C2C2C; /* Darker panel for form */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    color: #E0E0E0;
+}
+.wrap-table {
+    width: 100%;
+    /* Keep font size adjustment in mind for readability */
+}
+
+.txt, .txt-area {
+    width: calc(100% - 20px); /* Fill container minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #E0E0E0;
+    box-sizing: border-box;
+}
+
+.txt-area {
+    height: 120px;
+    resize: vertical;
+}
+
+.wrap-button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color:  #f97316; /* Cinematic highlight color */
+    font-size: 16px;
+    color: #1F1F1F; /* Dark text on bright button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.wrap-button:hover {
+    background-color:  #f97316;
+    transform: translateY(-2px);
+}
+
+/* About Page Refinements */
+.about-block {
+    padding: 20px;
+}
+
+.about-profile {
+    background-color: #2C2C2C; /* Updated background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.about-profile:hover {
+    transform: translateY(-5px);
+}
+
+.about-profile > img {
+    border: 3px solid  #f97316; /* Highlighted border */
+}
+
+/* Blog/Login Form Styles */
+.mainForm {
+    /* Use a dark background if the image is removed/not available */
+    background-image: none; 
+    background-color: #000000;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formCont {
+    max-width: 400px;
+    width: 90%;
+    background-color: #000000aa; /* Slightly more opaque dark overlay */
+    border: 1px solid  #f97316; /* Highlight border */
+}
